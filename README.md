@@ -8,4 +8,4 @@ Includes "themes" that can change the characters displayed. Current themes are d
 - [ ] More display customization
 
 ## Example
-![image](https://imgur.com/a/DpfRp05)
+![image](https://i.imgur.com/pwzRTHX.png)
