@@ -7,7 +7,7 @@ Includes "themes" that can change the characters displayed. Current themes are:
 * Future (|, _ ,  )
 * Surreal (@, ?, %).
 
-## Potential things to add
+## Potential Additions
 - [ ] Add more maze algorithms
 - [ ] More display customization
 
