@@ -8,6 +8,9 @@
 #define MAZE_WIDTH  10
 #define MAZE_HEIGHT 10
 
+#define DISP_COL "255;255;255"
+#define SOLVE_COL "82;48;117"
+
 #define THEME DEFAULT
 
 #define DEFAULT_WALL '|'
@@ -24,6 +27,7 @@
 
 #define MAKE_THEME(A, B) MAKE_THEME_T(A, B)
 #define MAKE_THEME_T(A, B) A ## _ ## B
+
 #define ERROR_EXIT(A) {\
     fprintf(stderr, A);\
     exit(EXIT_FAILURE);\
@@ -115,18 +119,18 @@ recuSolve(struct Maze* maze, enum Direction prev, size_t x, size_t y) {
         if (maze->map[y][x].ov>>i & 1 && i != oppDir[prev]) { // went in that direction
             size_t xn = x + MOV_DIR[i].x, yn = y + MOV_DIR[i].y;
             if (xn == MAZE_WIDTH - 1 && yn == maze->ye) { // yf is final y
-                printf("\x1b[48;2;82;48;117m\x1b[%zd;%zdH%c", y + 2, x * 2 + 2, maze->map[y][x].s ? ' ' : '_');
+                printf("\x1b[48;2;" SOLVE_COL "m\x1b[%zd;%zdH%c", y + 2, x * 2 + 2, maze->map[y][x].s ? ' ' : '_');
                 if (prev == EAST) {
                     puts("\x1b[2D_");
                 }
-                printf("\x1b[48;2;82;48;117m\x1b[%zd;%zdH%c ", yn + 2, xn * 2 + 2, maze->map[yn][xn].s ? ' ' : '_');
+                printf("\x1b[48;2;" SOLVE_COL "m\x1b[%zd;%zdH%c ", yn + 2, xn * 2 + 2, maze->map[yn][xn].s ? ' ' : '_');
                 if (i == EAST) {
                     puts("\x1b[3D_");
                 }
                 return SOLUTION;
             }
             if (recuSolve(maze, i, xn, yn)) {
-                printf("\x1b[48;2;82;48;117m\x1b[%zd;%zdH%c", y + 2, x * 2 + 2, maze->map[y][x].s ? ' ' : '_');
+                printf("\x1b[48;2;" SOLVE_COL "m\x1b[%zd;%zdH%c", y + 2, x * 2 + 2, maze->map[y][x].s ? ' ' : '_');
                 if (prev == EAST) {
                     puts(!x && y == maze->ys ? "\x1b[2D " : "\x1b[2D_");
                 } else if (prev == WEST) {
@@ -147,7 +151,7 @@ makeMaze(struct Maze* maze) {
 
 void
 dispMaze(struct Maze* maze) {
-    printf("%s", "\x1b[2J\x1b[1;1H\x1b[38;2;255;255;255m\x1b[A");
+    printf("%s", "\x1b[2J\x1b[1;1H\x1b[38;2;" DISP_COL "m\x1b[A");
     for (size_t x = 0; x < MAZE_WIDTH * 2 + 1; x++) {
        putchar(MAKE_THEME(THEME, FLOOR));
     }
