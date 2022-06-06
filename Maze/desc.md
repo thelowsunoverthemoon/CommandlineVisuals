@@ -1,3 +1,5 @@
+## Maze Generator/Solver
+
 Simple maze generator/solver based on recursive backtracking in C99. Uses VT100 escape sequences as display. This is a proof of concept to visualize things using escape sequences, which Windows recently started supporting.
 
 There are a number of defines that can change the maze.
