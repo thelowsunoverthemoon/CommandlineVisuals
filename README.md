@@ -1,6 +1,6 @@
-# Commandline Visuals
+<h1 align="center">Commandline Visuals</h1>
 
-Simple commandline visualizations using C99 through VT100 escape sequences, which Windows 10 recently started supporting. Each folder contains a desc.md file with a short description of the program. Each program can be easily customized. No external libraries are needed; the only non-standard library used is windows.h.
+<p align="center">Simple commandline visualizations using C99 through VT100 escape sequences, which Windows 10 recently started supporting. Each folder contains a desc.md file with a short description of the program. Each program can be easily customized. No external libraries are needed; the only non-standard library used is windows.h.</p>
 
 ## Programs
 
