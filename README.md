@@ -1,28 +1,14 @@
-# Commandline Mazes
-Simple maze generator/solver based on recursive backtracking in C99. Uses VT100 escape sequences as display. This is a proof of concept to visualize things using escape sequences, which Windows recently started supporting.
+# Commandline Visuals
 
-There are a number of defines that can change the maze.
+Simple commandline visualizations using C99 through VT100 escape sequences, which Windows 10 recently started supporting. Each folder contains a desc.md file with a short description of the program. Each program can be easily customized. No external libraries are needed; the only non-standard library used is windows.h.
 
-| Define  | Description |
-| ------------- | ------------- | 
-| ```MAZE_WIDTH``` | Maze Width |
-| ```MAZE_HEIGHT``` | Maze Height |
-| ```DISP_COL``` | Display Colour in format r;g;b |
-| ```SOLVE_COL```| Solved Path Colour in format r;g;b |
-| ```THEME```| One of the 3 options below |
+# Programs
 
-Themes change the maze characters displayed. Current themes are:
+* [L-Systems](L-Systems)
+![image](https://i.imgur.com/oBEAuEm.png)
 
-| Name  | Wall | Floor | Empty |
-| --- | --- | --- | --- | 
-| ```DEFAULT```|```\|```|```_```|``` ```|
-| ```FUTURE```|```/```|```_```|``` ```|
-| ```SURREAL```|```@```|```?```|```%```|
-
-
-## Potential Additions
-- [ ] Add more maze algorithms
-- [ ] More display customization
-
-## Example
+* [Maze Generator/Solver](Maze)
 ![image](https://i.imgur.com/pwzRTHX.png)
+
+* [IFS fractals](IFS)
+![image](https://i.imgur.com/hhkWwgw.png)
