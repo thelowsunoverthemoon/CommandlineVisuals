@@ -1,4 +1,4 @@
-## IFS
+## IFS Fractals
 
 Deterministic IFS fractals. Transformations are in the form
 
